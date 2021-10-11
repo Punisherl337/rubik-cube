@@ -17,5 +17,11 @@
     "bugs": {
         "url": "https://github.com/Punisherl337/rubik-cube/issues"
     },
-    "homepage": "https://github.com/Punisherl337/rubik-cube#readme"
+    "homepage": "https://github.com/Punisherl337/rubik-cube#readme",
+    "dependencies": {
+        "express-handlebars": "^5.3.4"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.13"
+    }
 }
