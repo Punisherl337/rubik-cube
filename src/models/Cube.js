@@ -1,28 +1,28 @@
-const uniqId = require('uniqid');
-class Cube {
-    static cubes = [{
-        id: 'id1',
-        name: 'ice cube',
-        description: 'dasd',
-        imageUrl: 'https://assets.entrepreneur.com/content/3x2/2000/20150327221922-success-winning-inspirational.jpeg',
-        difficulty: '3'
-    }];
+const mongoose = require('mongoose');
 
-    constructor(name, description, imageUrl, difficulty) {
-        this.id = uniqId();
-        this.name = name;
-        this.description = description;
-        this.imageUrl = imageUrl;
-        this.difficulty = difficulty;
-    };
-
-    static getAll() {
-        return Cube.cubes.slice();
-    };
-
-    static add(cube) {
-        Cube.cubes.push(cube);
+const cubeSchema = new mongoose.Schema({
+    name: {
+        type: String,
+        required: true,
+    },
+    description: {
+        type: String,
+        required: true,
+        maxlength: 100
+    },
+    imageUrl: {
+        type: String,
+        required: true,
+        validate: /https?:\/\//i,
+    },
+    difficultyLevel: {
+        type: Number,
+        required: true,
+        min: 1,
+        max: 5
     }
-}
+});
+
+const Cube = mongoose.model('cube', cubeSchema);
 
 module.exports = Cube;
