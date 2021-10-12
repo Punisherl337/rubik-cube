@@ -15,10 +15,16 @@ const about = (req, res) => {
 }
 
 const search = (req, res) => {
-    let { serach, from, to } = req.query;
+    let { search, from, to } = req.query;
 
-    let cubes = cubeService.search(serach, from, to);
-    res.render('index', { cubes });
+    let cubes = cubeService.search(search, from, to);
+    res.render('index', {
+        title: 'SEARCH',
+        search,
+        from,
+        to,
+        cubes,
+    });
 }
 
 router.get('/', home);
