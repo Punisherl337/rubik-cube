@@ -1,7 +1,8 @@
-const uniqid = require('uniqid');
+const uniqId = require('uniqid');
 class Cube {
     static cubes = [{
-        name: 'asdas',
+        id: 'id1',
+        name: 'ice cube',
         description: 'dasd',
         imageUrl: 'https://assets.entrepreneur.com/content/3x2/2000/20150327221922-success-winning-inspirational.jpeg',
         difficulty: '3'
