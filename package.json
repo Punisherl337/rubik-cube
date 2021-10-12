@@ -19,7 +19,8 @@
     },
     "homepage": "https://github.com/Punisherl337/rubik-cube#readme",
     "dependencies": {
-        "express-handlebars": "^5.3.4"
+        "express-handlebars": "^5.3.4",
+        "uniqid": "^5.4.0"
     },
     "devDependencies": {
         "nodemon": "^2.0.13"
