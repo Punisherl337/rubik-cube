@@ -9,10 +9,10 @@ const getCreateCubePage = (req, res) => {
 }
 
 const createCube = async(req, res) => {
-    let { name, description, imageUlr, difficulty } = req.body;
+    let { name, description, imageUrl, difficulty } = req.body;
 
     try {
-        await cubeService.create(name, description, imageUlr, difficulty);
+        await cubeService.create(name, description, imageUrl, difficulty);
         res.redirect('/');
 
     } catch (error) {
@@ -22,7 +22,7 @@ const createCube = async(req, res) => {
 
 const cubeDetails = async(req, res) => {
     let cube = await cubeService.getOne(req.params.cubeId);
-    res.render('details', {...cube });
+    res.render('cube/details', {...cube });
 }
 
 router.get('/create', getCreateCubePage);
