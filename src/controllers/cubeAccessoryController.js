@@ -1,4 +1,4 @@
-const router = require('express').Router({ mergerParams: true });
+const router = require('express').Router({ mergeParams: true });
 
 const cubeService = require('../services/cubeService');
 const accessoryService = require('../services/accessoryService');
@@ -6,7 +6,7 @@ const accessoryService = require('../services/accessoryService');
 router.get('/add', async(req, res) => {
     let cube = await cubeService.getOne(req.params.cubeId);
     let accessories = await accessoryService.getAllWithout(cube.accessories.map(x => x._id));
-    res.render('/cube/accessory/add', {...cube, accessories });
+    res.render('cube/accessory/add', { cube, accessories });
 });
 
 router.post('/add', async(req, res) => {
