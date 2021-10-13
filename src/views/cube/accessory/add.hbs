@@ -1,7 +1,7 @@
 <main>
     <h1>Attach a new accessory</h1>
     <div class="form">
-        <h2>{{cube.name}}/h2>
+        <h2>{{cube.name}}</h2>
             <img class="cube" src="{{cube.imageUrl}}">
             {{#if accessories}}
             <form action="/cube/{{cube._id}}/accessory/add" method="POST">
