@@ -3,11 +3,13 @@ const mongoose = require('mongoose');
 const accessorySchema = new mongoose.Schema({
     name: {
         type: String,
-        required: true
+        required: true,
+        maxlength: 25
     },
     imageUrl: {
         type: String,
-        required: [true, 'Image url is required']
+        required: [true, 'Image url is required'],
+        maxlength: 125
     },
     description: {
         type: String,
