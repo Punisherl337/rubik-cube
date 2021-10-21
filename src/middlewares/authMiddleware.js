@@ -2,7 +2,7 @@ const { TOKEN_COOKIE, SECRET } = require("../constants");
 const jwt = require("jsonwebtoken");
 
 exports.auth = function (req, res, next) {
-  let token = req.cookies["TOKEN_COOKIE"];
+  let token = req.cookies[TOKEN_COOKIE];
   if (!token) {
     return next();
   }
@@ -16,9 +16,9 @@ exports.auth = function (req, res, next) {
 };
 
 
-exports.isAuth = function(req,res,next) {
-    if(!req.user) {
-        return res.status(401).redirect('/login');
-    }
-    next();
+exports.isAuth = function (req, res, next) {
+  if (!req.user) {
+    return res.status(401).redirect('/login');
+  }
+  next();
 }
