@@ -46,7 +46,7 @@ const deleteOne = (cubeId) => {
   return Cube.findByIdAndDelete(cubeId);
 };
 
-const updateOne = (cubeId, cube) => Cube.findByIdAndUpdate(cubeId, {}, {runValidators:true});
+const updateOne = (cubeId, cube) => Cube.findByIdAndUpdate(cubeId, cube, {runValidators:true});
 
 const cubeService = {
   create,
